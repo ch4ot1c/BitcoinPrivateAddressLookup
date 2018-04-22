@@ -12,10 +12,10 @@ class EtherAddressLookup {
 
     setDefaultExtensionSettings()
     {
-        this.blHighlight = false;
+        this.blHighlight = true;
         this.blPerformAddressLookups = true;
-        this.strBlockchainExplorer = "https://etherscan.io/address";
-        this.strRpcProvider = "https://localhost:8545";
+        this.strBlockchainExplorer = "https://explorer.btcprivate.org/address"; //https://etherscan.io/address
+        this.strRpcProvider = "https://localhost:8545"; // For ETH web3; BTCP = 7932
 
         this.intSettingsCount = 0;
         this.intSettingsTotalCount = 2;
@@ -76,7 +76,14 @@ class EtherAddressLookup {
             /(^|\s|:|-)([a-z0-9][a-z0-9-.]+[a-z0-9](?:\.eth))(\s|$)/gi,
 
             // ENS With ZWCs
-            /(^|\s|:|-)([a-z0-9][a-z0-9-.]*(\u200B|\u200C|\u200D|\uFEFF|\u2028|\u2029|&zwnj;|&#x200c;)[a-z0-9]*(?:\.eth))(\s|$)/gi
+            /(^|\s|:|-)([a-z0-9][a-z0-9-.]*(\u200B|\u200C|\u200D|\uFEFF|\u2028|\u2029|&zwnj;|&#x200c;)[a-z0-9]*(?:\.eth))(\s|$)/gi,
+
+            // BTCP b-address (transparent)
+            /(^|\s|:|-)(^(b1|b3)[a-km-zA-HJ-NP-Z1-9]{33})(\s|$)/gi
+
+            //TODO zk
+            //TODO BTCP testnet - n1 n3 zz
+
         ];
 
         // Register RegEx Matching Patterns
@@ -88,7 +95,10 @@ class EtherAddressLookup {
             this.regExPatterns[1],
 
             // ENS With ZWCs
-            this.regExPatterns[2]
+            this.regExPatterns[2],
+
+            // BTCP b-address (transparent)
+            /(^(b1|b3)[a-km-zA-HJ-NP-Z1-9]{33})/gi
         ];
 
         // Register Replace Patterns
@@ -109,7 +119,16 @@ class EtherAddressLookup {
 
             // ENS With ZWCs Replace
             '$1<slot title="WARNING! This ENS address has ZWCs. Someone may be trying to scam you." ' +
-            'class="ext-etheraddresslookup-warning">$2</slot>$3'
+            'class="ext-etheraddresslookup-warning">$2</slot>$3',
+
+            // BTCP b-address (transparent) replace
+            // TODO distinct ui when displaying BTCP addresses
+            '$1<a href="' + this.strBlockchainExplorer + '/$2" ' +
+            'data-address="$2"' +
+            'class="ext-etheraddresslookup-link ext-etheraddresslookup-btcp-baddress" ' +
+            'target="'+ this.target +'">' +
+            '<div class="ext-etheraddresslookup-blockie" data-ether-address="$2" ></div> $2' +
+            '</a>',
         ];
     }
 
@@ -356,6 +375,12 @@ class EtherAddressLookup {
         for (var i = 0; i < objNodes.length; i++) {
             objNodes[i].addEventListener('mouseover', this.event_0xAddressHover, false);
         }
+        /* TODO btcp
+        objNodes = document.getElementsByClassName("ext-etheraddresslookup-btcp-baddress");
+        for (var i = 0; i < objNodes.length; i++) {
+            objNodes[i].addEventListener('mouseover', this.event_bAddressHover, false);
+        }
+        */
     }
 
     //The event handler for 0x address mouseover.

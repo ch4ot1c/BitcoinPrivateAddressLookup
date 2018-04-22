@@ -63,7 +63,7 @@ objBrowser.runtime.onMessage.addListener(
             case 'blockchain_explorer' :
                 strResponse = localStorage.getItem("ext-etheraddresslookup-blockchain_explorer");
                 if(strResponse === null) {
-                    strResponse = "https://etherscan.io/address";
+                    strResponse = "https://explorer.btcprivate.org/address"; //https://etherscan.io/address
                 }
                 break;
             case 'blacklist_domains' :

@@ -14,7 +14,7 @@ function refreshBlockchainExplorer() {
     var strBlockchainExplorer = localStorage.getItem("ext-etheraddresslookup-blockchain_explorer");
 
     if(strBlockchainExplorer === null) {
-        document.getElementById("ext-etheraddresslookup-choose_blockchain").value = "https://etherscan.io/address";
+        document.getElementById("ext-etheraddresslookup-choose_blockchain").value = "https://explorer.btcprivate.org/address"; //https://etherscan.io/address
     } else {
         document.getElementById("ext-etheraddresslookup-choose_blockchain").value = strBlockchainExplorer;
     }
