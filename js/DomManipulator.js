@@ -79,11 +79,10 @@ class EtherAddressLookup {
             /(^|\s|:|-)([a-z0-9][a-z0-9-.]*(\u200B|\u200C|\u200D|\uFEFF|\u2028|\u2029|&zwnj;|&#x200c;)[a-z0-9]*(?:\.eth))(\s|$)/gi,
 
             // BTCP b-address (transparent)
-            /(^|\s|:|-)(^(b1|b3)[a-km-zA-HJ-NP-Z1-9]{33})(\s|$)/gi
+            /(^|\s|:|-)(^(b1|bx)[a-km-zA-HJ-NP-Z1-9]{33})(\s|$)/gi,
 
-            //TODO zk
-            //TODO BTCP testnet - n1 n3 zz
-
+            // BTCP z-address (shielded)
+            /(^|\s|:|-)(^(zk)[a-km-zA-HJ-NP-Z1-9]{93})(\s|$)/gi
         ];
 
         // Register RegEx Matching Patterns
@@ -98,7 +97,10 @@ class EtherAddressLookup {
             this.regExPatterns[2],
 
             // BTCP b-address (transparent)
-            /(^(b1|b3)[a-km-zA-HJ-NP-Z1-9]{33})/gi
+            /(^(b1|bx)[a-km-zA-HJ-NP-Z1-9]{33})/gi,
+
+            // BTCP z-address (shielded)
+            /(^(zk)[a-km-zA-HJ-NP-Z1-9]{93})/gi
         ];
 
         // Register Replace Patterns
@@ -122,13 +124,22 @@ class EtherAddressLookup {
             'class="ext-etheraddresslookup-warning">$2</slot>$3',
 
             // BTCP b-address (transparent) replace
-            // TODO distinct ui when displaying BTCP addresses
+            // TODO distinct ui when displaying BTCP b-addresses
             '$1<a href="' + this.strBlockchainExplorer + '/$2" ' +
             'data-address="$2"' +
-            'class="ext-etheraddresslookup-link ext-etheraddresslookup-btcp-baddress" ' +
+            'class="ext-etheraddresslookup-link ext-etheraddresslookup-btcp-address" ' +
             'target="'+ this.target +'">' +
             '<div class="ext-etheraddresslookup-blockie" data-ether-address="$2" ></div> $2' +
             '</a>',
+
+            // BTCP z-address (shielded) replace
+            // TODO distinct ui when displaying BTCP z-addresses
+            '$1<a href="' + this.strBlockchainExplorer + '/$2" ' +
+            'data-address="$2"' +
+            'class="ext-etheraddresslookup-link ext-etheraddresslookup-btcp-address" ' +
+            'target="'+ this.target +'">' +
+            '<div class="ext-etheraddresslookup-blockie" data-ether-address="$2" ></div> $2' +
+            '</a>'
         ];
     }
 
@@ -376,7 +387,7 @@ class EtherAddressLookup {
             objNodes[i].addEventListener('mouseover', this.event_0xAddressHover, false);
         }
         /* TODO btcp
-        objNodes = document.getElementsByClassName("ext-etheraddresslookup-btcp-baddress");
+        objNodes = document.getElementsByClassName("ext-etheraddresslookup-btcp-address");
         for (var i = 0; i < objNodes.length; i++) {
             objNodes[i].addEventListener('mouseover', this.event_bAddressHover, false);
         }

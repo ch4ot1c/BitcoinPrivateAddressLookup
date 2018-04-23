@@ -1,5 +1,5 @@
 .ext-etheraddresslookup-link {
-    white-space: nowrap;
+    white-space: pre-wrap; /*no-wrap*/
 }
 
 .ext-etheraddresslookup-link-highlight {
