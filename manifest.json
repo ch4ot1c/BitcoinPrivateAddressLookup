@@ -13,7 +13,11 @@
   },
 
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "storage",
+    "https://api.coinmarketcap.com/v1/ticker/bitcoin-private/",
+    "https://api.coinmarketcap.com/v1/ticker/bitcoin-private/?convert=EUR",
+    "https://api.coinmarketcap.com/v1/ticker/bitcoin-private/?convert=CAD"
   ],
 
   "optional_permissions": [

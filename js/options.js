@@ -37,19 +37,29 @@ let objBrowser = chrome ? chrome : browser;
         objManifestVersion.innerHTML = objManifest.version;
     }
 
-    //init getting blacklisted domains
+    // init getting blacklisted domains
     getBlacklistedDomains();
     setInterval(function() {
         console.log("Re-caching blacklisted domains");
         getBlacklistedDomains();
     }, 180000);
 
+    // init getting whitelisted domains
     getWhitelistedDomains();
     setInterval(function() {
         console.log("Re-caching whitelisted domains");
         getWhitelistedDomains();
     }, 180000);
+
+    // init getting Bitcoin Private price
+    updateTicker();
+    setInterval(function() {
+        console.log("Re-caching Bitcoin Private price");
+        updateTicker();
+    }, 5000);
+
 })();
+
 
 objBrowser.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
@@ -244,6 +254,43 @@ function getWhitelistedDomains()
     }
 
     return objWhitelistedDomains.domains;
+}
+
+function updateTicker() {
+  getBTCPPriceFromSource().then(function (json) {
+    
+    var price = json[0].price_usd;
+    console.log(price);
+    if (price) {
+      localStorage.setItem("ext-etheraddresslookup-btcp-price_usd", price);
+      chrome.browserAction.setBadgeBackgroundColor({
+        color: [0, 0, 0, 255]
+      });
+      chrome.browserAction.setBadgeText({
+        'text': "" + price 
+      });
+      //return price;
+    }
+
+  });
+}
+
+/*
+setInterval(updateTicker, 1 * 60 * 1000);
+updateTicker();
+*/
+
+async function getBTCPPriceFromSource()
+{
+    try {
+        console.log("Getting BTCP price from CoinMarketCap");
+        let objResponse = await fetch("https://api.coinmarketcap.com/v1/ticker/bitcoin-private/");
+        return objResponse.json();
+    }
+    catch(objError) {
+        console.log("Failed to get BTCP Price from CoinMarketCap", objError);
+    }
+
 }
 
 async function getBlacklistedDomainsFromSource(objBlacklist)
