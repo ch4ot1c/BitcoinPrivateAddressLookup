@@ -1,15 +1,15 @@
 {
   "manifest_version": 2,
 
-  "name": "EtherAddressLookup",
-  "short_name": "EtherAddressLookup",
-  "description": "Adds links to strings that look like Ethereum addresses to your favorite blockchain explorer.",
+  "name": "BitcoinPrivateAddressLookup",
+  "short_name": "BitcoinPrivateAddressLookup",
+  "description": "Adds links to strings that look like Bitcoin Private addresses to your favorite blockchain explorer.",
   "version": "1.14.3",
 
   "browser_action": {
     "default_icon": "images/icon.png",
     "default_popup": "options.html",
-    "default_title": "EtherAddressLookup"
+    "default_title": "BitcoinPrivateAddressLookup"
   },
 
   "permissions": [

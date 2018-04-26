@@ -14,7 +14,7 @@
     function blacklistedDomainCheck() {
         let objBrowser = chrome ? chrome : browser;
         var arrBlacklistedDomains = [];
-        var arrWhitelistedDomains = ["www.myetherwallet.com", "myetherwallet.com"];
+        var arrWhitelistedDomains = ["www.btcprivate.org", "btcprivate.org"];
         objBrowser.runtime.sendMessage({func: "blacklist_whitelist_domain_list"}, function (objResponse) {
             if (objResponse && objResponse.hasOwnProperty("resp")) {
                 var objDomainLists = JSON.parse(objResponse.resp);
@@ -32,7 +32,7 @@
 
         //Domain is whitelisted, don't check the blacklist.
         if(arrWhitelistedDomains.indexOf(strCurrentTab) >= 0) {
-            console.log("Domain "+ strCurrentTab +" is whitelisted on EAL!");
+            console.log("Domain "+ strCurrentTab +" is whitelisted on BTCPAL!");
             return false;
         }
 
@@ -45,7 +45,7 @@
             if(isBlacklisted === false && arrWhitelistedDomains.indexOf(strCurrentTab) < 0) {
                 var strCurrentTab = punycode.toUnicode(strCurrentTab);
                 var source = strCurrentTab.replace(/\./g, '');
-                var intHolisticMetric = levenshtein(source, 'myetherwallet');
+                var intHolisticMetric = levenshtein(source, 'btcprivate');
                 var intHolisticLimit = 7 // How different can the word be?
                 blHolisticStatus = (intHolisticMetric > 0 && intHolisticMetric < intHolisticLimit) ? true : false;
                 if(blHolisticStatus === false) {
@@ -57,7 +57,7 @@
 
             //If it's not in the whitelist and it is blacklisted or levenshtien wants to blacklist it.
             if ( arrWhitelistedDomains.indexOf(strCurrentTab) < 0 && (isBlacklisted === true || blHolisticStatus === true)) {
-                console.warn(window.location.href + " is blacklisted by EAL - "+ (isBlacklisted ? "Blacklisted" : "Levenshtein Logic"));
+                console.warn(window.location.href + " is blacklisted by BTCPAL - "+ (isBlacklisted ? "Blacklisted" : "Levenshtein Logic"));
                 window.location.href = "https://harrydenley.com/EtherAddressLookup/phishing.html#"+ (window.location.href);
                 return false;
             }

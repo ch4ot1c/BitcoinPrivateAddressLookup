@@ -45,31 +45,24 @@ function getBookmarks()
 {
     var strBookmarks = localStorage.getItem("ext-etheraddresslookup-bookmarks");
     //No bookmarks have been set, set the default ones.
+    //TODO icons
     if(strBookmarks === null) {
         var arrBookmarks = new Array();
         arrBookmarks.push({
             "icon": "images/bookmarks/myetherwallet.png",
-            "url": "https://myetherwallet.com"
+            "url": "https://btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/etherscan.png",
-            "url": "https://etherscan.io"
+            "icon": "images/bookmarks/myetherwallet.png",
+            "url": "https://explorer.btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/etherchain.jpg",
-            "url": "https://etherchain.org"
+            "icon": "images/bookmarks/myetherwallet.png",
+            "url": "https://github.com/BTCPrivate"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/ethplorer.jpg",
-            "url": "https://ethplorer.io"
-        });
-        arrBookmarks.push({
-            "icon": "images/bookmarks/rethereum.png",
-            "url": "https://reddit.com/r/ethereum"
-        });
-        arrBookmarks.push({
-            "icon": "images/bookmarks/rethtrader.png",
-            "url": "https://reddit.com/r/ethtrader"
+            "icon": "images/bookmarks/myetherwallet.png",
+            "url": "https://reddit.com/r/BitcoinPrivate"
         });
     } else {
         arrBookmarks = JSON.parse(strBookmarks);

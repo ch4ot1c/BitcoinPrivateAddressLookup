@@ -50,9 +50,9 @@ function doHistoryInspection() {
             //See if the domain is in the phishing list
             if (objBlacklistedDomains.domains.indexOf(objUri.domain()) >= 0) {
                 strReportText += "<span class='ext-etheraddresslookup-note'>" + (new Date(objHistoryItems[intIterator].lastVisitTime).toUTCString()) + "</span>&nbsp;";
-                //Did EAL redirect you away?
+                //Did BTCPAL redirect you away?
                 if (blRedirected) {
-                    strReportText += objUri.domain() + "<span class='ext-etheraddresslookup-note ext-etheraddresslookup-history_good'>EAL successfully redirected you away.</span>";
+                    strReportText += objUri.domain() + "<span class='ext-etheraddresslookup-note ext-etheraddresslookup-history_good'>BTCPAL successfully redirected you away.</span>";
                 } else {
                     strReportText += objUri.domain() + "<span class='ext-etheraddresslookup-note ext-etheraddresslookup-history_bad'>Domain is now blacklisted - but wasn't at the time.</span>";
                     ++intTotalWarnings;

@@ -4,7 +4,7 @@ class EtherAddressLookup {
 
     constructor(objWeb3)
     {
-        console.log("Init EAL");
+        console.log("Init BTCPAL");
         this.objWeb3 = objWeb3;
         this.setDefaultExtensionSettings();
         this.init();
@@ -14,7 +14,7 @@ class EtherAddressLookup {
     {
         this.blHighlight = true;
         this.blPerformAddressLookups = true;
-        this.strBlockchainExplorer = "https://explorer.btcprivate.org/address"; //https://etherscan.io/address
+        this.strBlockchainExplorer = "https://explorer.btcprivate.org/address";
         this.strRpcProvider = "https://localhost:8545"; // For ETH web3; BTCP = 7932
 
         this.intSettingsCount = 0;

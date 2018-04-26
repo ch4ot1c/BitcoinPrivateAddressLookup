@@ -1,4 +1,4 @@
-# EtherAddressLookup Contributing Guide
+# BitcoinPrivateAddressLookup Contributing Guide
 
 ## How to submit links to blacklists/whitelists
 
@@ -12,9 +12,9 @@ This list will redirect users away from the domain so you cannot view it. You ca
 * [Opening a new issue](https://github.com/409H/EtherAddressLookup/issues/new)
 * [Opening a new pull request with your change](https://github.com/409H/EtherAddressLookup/compare)
 
-#### Whistelists
+#### Whitelists
 
-This will ensure the domain can be accessed with EAL enabled, even if the domain is on the blacklist (by mistake or otherwsie). You can submit a **whitelist** request via the following methods (in no particular order);
+This will ensure the domain can be accessed with BTCPAL enabled, even if the domain is on the blacklist (by mistake or otherwsie). You can submit a **whitelist** request via the following methods (in no particular order);
 
 * [Opening a new issue](https://github.com/409H/EtherAddressLookup/issues/new)
 * [Opening a new pull request with your change](https://github.com/409H/EtherAddressLookup/compare)
