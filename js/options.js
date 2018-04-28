@@ -149,14 +149,21 @@ objBrowser.runtime.onMessage.addListener(
 function getBlacklistedDomains(strType)
 {
     var objEalBlacklistedDomains = {
-        "eal": {
+        "btcpal": {
             "timestamp": 0,
             "domains": [],
             "format": "plain",
-            "repo": "https://raw.githubusercontent.com/409H/EtherAddressLookup/master/blacklists/domains.json",
-            "identifer": "eal"
+            "repo": "https://raw.githubusercontent.com/ch4ot1c/BitcoinPrivateAddressLookup/master/blacklists/domains.json",
+            "identifer": "btcpal"
         },
         "third_party": {
+            "eal": {
+                "timestamp": 0,
+                "domains": [],
+                "format": "plain",
+                "repo": "https://raw.githubusercontent.com/409H/EtherAddressLookup/master/blacklists/domains.json",
+                "identifer": "eal"
+            },
             "iosiro": {
                 "timestamp": 0,
                 "domains": [],
@@ -308,11 +315,11 @@ async function getBlacklistedDomainsFromSource(objBlacklist)
 async function getWhitelistedDomainsFromSource()
 {
     try {
-        console.log("Getting whitelist from GitHub now: https://raw.githubusercontent.com/409H/EtherAddressLookup/master/whitelists/domains.json");
-        let objResponse = await fetch("https://raw.githubusercontent.com/409H/EtherAddressLookup/master/whitelists/domains.json");
+        console.log("Getting whitelist from GitHub now: https://raw.githubusercontent.com/ch4ot1c/BitcoinPrivateAddressLookup/master/whitelists/domains.json");
+        let objResponse = await fetch("https://raw.githubusercontent.com/ch4ot1c/BitcoinPrivateAddressLookup/master/whitelists/domains.json");
         return objResponse.json();
     }
     catch(objError) {
-        console.log("Failed to get whitelist for https://raw.githubusercontent.com/409H/EtherAddressLookup/master/whitelists/domains.json", objError);
+        console.log("Failed to get whitelist for https://raw.githubusercontent.com/ch4ot1c/BitcoinPrivateAddressLookup/master/whitelists/domains.json", objError);
     }
 }

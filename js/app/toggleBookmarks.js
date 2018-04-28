@@ -49,19 +49,19 @@ function getBookmarks()
     if(strBookmarks === null) {
         var arrBookmarks = new Array();
         arrBookmarks.push({
-            "icon": "images/bookmarks/myetherwallet.png",
+            "icon": "images/btcp-128x128.png",
             "url": "https://btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/myetherwallet.png",
+            "icon": "images/btcp-128x128.png",
             "url": "https://explorer.btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/myetherwallet.png",
+            "icon": "images/btcp-128x128.png",
             "url": "https://github.com/BTCPrivate"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/myetherwallet.png",
+            "icon": "images/btcp-128x128.png",
             "url": "https://reddit.com/r/BitcoinPrivate"
         });
     } else {
