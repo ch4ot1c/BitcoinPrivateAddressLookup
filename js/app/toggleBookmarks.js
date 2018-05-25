@@ -45,7 +45,6 @@ function getBookmarks()
 {
     var strBookmarks = localStorage.getItem("ext-etheraddresslookup-bookmarks");
     //No bookmarks have been set, set the default ones.
-    //TODO icons
     if(strBookmarks === null) {
         var arrBookmarks = new Array();
         arrBookmarks.push({

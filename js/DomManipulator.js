@@ -191,7 +191,7 @@ class EtherAddressLookup {
      */
     convertAddressToLink()
     {
-        var arrWhitelistedTags = ["code", "span", "p", "td", "li", "em", "i", "b", "strong", "small"];
+        var arrWhitelistedTags = ["div", "code", "span", "p", "td", "li", "em", "i", "b", "strong", "small"];
 
         //Get the whitelisted nodes
         for(var i=0; i<arrWhitelistedTags.length; i++) {
@@ -434,6 +434,7 @@ class EtherAddressLookup {
                 if(error) {
                     intTransactionCount = -1;
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).style.display = "inline";
+                    objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).innerText = "There were RPC errors";
                 } else {
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_ok_"+intUniqueId).style.display = "inline";
                     intTransactionCount = parseInt(result).toLocaleString();
@@ -453,6 +454,7 @@ class EtherAddressLookup {
                 if(error) {
                     flEthBalance = -1;
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).style.display = "inline";
+                    objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).innerText = "There were RPC errors";
                 } else {
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_ok_"+intUniqueId).style.display = "inline";
                     flEthBalance = web3.fromWei(result.toString(10), "ether").toLocaleString("en-US", {maximumSignificantDigits: 9});
@@ -473,6 +475,7 @@ class EtherAddressLookup {
                 if(error) {
                     objContractAddress.innerHTML += "<small>Unable to determine if contract</small>";
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).style.display = "inline";
+                    objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_error_"+intUniqueId).innerText = "There were RPC errors";
                 } else {
                     objHoverNodeContent.querySelector("#ext-etheraddresslookup-address_stats_hover_node_ok_"+intUniqueId).style.display = "inline";
                     var blIsContractAddress = result == "0x" ? false : true;
@@ -483,7 +486,7 @@ class EtherAddressLookup {
             });
 
             if(objResponse.resp.includes("quiknode.io")) {
-                objHoverNodeContent.innerHTML += "<a href='https://quiknode.io/?ref=EtherAddressLookup' target='_blank' title='RPC node managed by Quiknode.io'><img src='" + chrome.runtime.getURL("/images/powered-by-quiknode.png") + "' /></a>";
+                objHoverNodeContent.innerHTML += "<a href='https://quiknode.io/?ref=EtherAddressLookup' target='_blank' title='RPC node managed by Quiknode.io'><img src='" + objBrowser.runtime.getURL("/images/powered-by-quiknode.png") + "' /></a>";
             }
 
             return false;

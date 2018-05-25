@@ -12,6 +12,33 @@ Ether/ERC20 donation address: [`0x661b5dc032bedb210f225df4b1aa2bdd669b38bc`](htt
 
 #### Install Chrome Extension Here: https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn
 
+#### Install Firefox Extension Here: https://addons.mozilla.org/en-US/firefox/addon/etheraddresslookup/
+
+## Installations
+
+### Chrome & Firefox Extension
+
+The `master` branch is bundled on every release and pushed to the Chrome & Firefox Extension store, you can view/download it 
+here: [https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) for Chrome, and [https://addons.mozilla.org/en-US/firefox/addon/etheraddresslookup/](https://addons.mozilla.org/en-US/firefox/addon/etheraddresslookup/) for Firefox.
+
+(Note that this will have automatic updates)
+
+### Manual Installation
+
+#### Chrome
+* Clone/download [the repo](https://github.com/409H/EtherAddressLookup).
+* Go to [chrome://extensions](chrome://extensions) in Chrome
+* Turn on developer mode.
+* Load the `manifest.json` file by dragging and dropping.
+
+#### Firefox
+* Clone/download [the repo](https://github.com/409H/EtherAddressLookup).
+* Go to [about:debugging](about:debugging) in Firefox
+* Click "Load Temporary Add-on"
+* Browse to the downloaded repo, and double click `manifest.json`
+
+(Note that this will **not** have automatic updates)
+
 ## Found a Phishing URL? Is your website getting erroneously blocked? You have the power to fix it, not just talk about it!
 
 As a community resource, everyone is encouraged to make a PR to add or update these lists. This process is far easier than you might imagine!
@@ -31,31 +58,6 @@ As a community resource, everyone is encouraged to make a PR to add or update th
 9. Click the "Create Pull Request" button.....twice.
 10. That's it. You successfully made a new pull request and helped make the world a better place! Tell all your friends.
 
-
-## Installations
-
-### Chrome & Firefox Extension
-
-The `master` branch is bundled on every release and pushed to the Chrome & Firefox Extension store, you can view/download it 
-here: [https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn](https://chrome.google.com/webstore/detail/etheraddresslookup/pdknmigbbbhmllnmgdfalmedcmcefdfn) for Chrome, and _coming soon_ for Firefox (though manual installation is supported - it's just not listed officially on the AMO site, going through review stages.).
-
-(Note that this will have automatic updates)
-
-### Manual Installation
-
-#### Chrome
-* Clone/download [the repo](https://github.com/409H/EtherAddressLookup).
-* Go to [chrome://extensions](chrome://extensions) in Chrome
-* Turn on developer mode.
-* Load the `manifest.json` file by dragging and dropping.
-
-#### Firefox
-* Clone/download [the repo](https://github.com/409H/EtherAddressLookup).
-* Go to [about:debugging](about:debugging) in Firefox
-* Click "Load Temporary Add-on"
-* Browse to the downloaded repo, and double click `manifest.json`
-
-(Note that this will **not** have automatic updates)
 
 ## Blacklisted Domains
 

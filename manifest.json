@@ -4,7 +4,7 @@
   "name": "BitcoinPrivateAddressLookup",
   "short_name": "BitcoinPrivateAddressLookup",
   "description": "Adds links to strings that look like Bitcoin Private addresses to your favorite blockchain explorer.",
-  "version": "1.14.3",
+  "version": "1.16",
 
   "browser_action": {
     "default_icon": "images/icon.png",
