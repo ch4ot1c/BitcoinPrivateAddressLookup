@@ -11,11 +11,12 @@
     "url": "git+https://github.com/ch4ot1c/BitcoinPrivateAddressLookup.git"
   },
   "keywords": [
+    "Bitcoin Private",
     "Ethereum",
     "security",
     "blacklist"
   ],
-  "author": "BTCPHarry Denley",
+  "author": "BTCP / Harry Denley",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ch4ot1c/BitcoinPrivateAddressLookup/issues"
