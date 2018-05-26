@@ -49,19 +49,19 @@ function getBookmarks()
         var arrBookmarks = new Array();
         arrBookmarks.push({
             "icon": "images/btcp-128x128.png",
-            "url": "https://btcprivate.org"
-        });
-        arrBookmarks.push({
-            "icon": "images/btcp-128x128.png",
             "url": "https://explorer.btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/btcp-128x128.png",
+            "icon": "images/bookmarks/github.svg",
             "url": "https://github.com/BTCPrivate"
         });
         arrBookmarks.push({
-            "icon": "images/btcp-128x128.png",
+            "icon": "images/bookmarks/reddit.png",
             "url": "https://reddit.com/r/BitcoinPrivate"
+        });
+        arrBookmarks.push({
+            "icon": "images/btcp-128x128.png",
+            "url": "https://btcprivate.org"
         });
     } else {
         arrBookmarks = JSON.parse(strBookmarks);

@@ -8,7 +8,8 @@ For each type of request, please make sure you provide evidence as to why it nee
 
 This list will redirect users away from the domain so you cannot view it. You can submit a **blacklist** request via the following methods (in no particular order);
 
-* [https://etherscamdb.info/report/](https://etherscamdb.info/report/) 
+# [https://scams.btcprivate.org/report/](https://scams.btcprivate.org/report/)
+* [https://etherscamdb.info/report/](https://etherscamdb.info/report/)
 * [Opening a new issue](https://github.com/409H/EtherAddressLookup/issues/new)
 * [Opening a new pull request with your change](https://github.com/409H/EtherAddressLookup/compare)
 
@@ -22,7 +23,7 @@ This will ensure the domain can be accessed with BTCPAL enabled, even if the dom
 #### What kind of links do I submit?
 
 ##### All relevant subdomains
-Please submit the domain (and any relevent subdomains) that you feel need to be on the list. 
+Please submit the domain (and any relevent subdomains) that you feel need to be on the list.
 
 ##### Punycodes
 If a domain has unicode characters, please submit the punycode variant (ie: `xn--bttrex-3va.net` instead of `bíttrex.net`.) You can use this tool to do that: [https://www.punycoder.com/](https://www.punycoder.com/).

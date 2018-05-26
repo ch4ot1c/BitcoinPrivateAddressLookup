@@ -15,7 +15,7 @@ class EtherAddressLookup {
         this.blHighlight = true;
         this.blPerformAddressLookups = true;
         this.strBlockchainExplorer = "https://explorer.btcprivate.org/address";
-        this.strRpcProvider = "https://localhost:8545"; // For ETH web3; BTCP = 7932
+        this.strRpcProvider = "https://localhost:7932"; // ETH web3 = 8545; BTCP = 7932
 
         this.intSettingsCount = 0;
         this.intSettingsTotalCount = 2;

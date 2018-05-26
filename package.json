@@ -1,24 +1,24 @@
 {
-  "name": "etheraddresslookup",
+  "name": "bitcoinprivateaddresslookup",
   "version": "1.16",
-  "description": "A web extension for blocking ethereum phishing websites.",
+  "description": "A web extension for blocking bitcoin private phishing websites.",
   "main": "blacklists/domains.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/409H/EtherAddressLookup.git"
+    "url": "git+https://github.com/ch4ot1c/BitcoinPrivateAddressLookup.git"
   },
   "keywords": [
     "Ethereum",
     "security",
     "blacklist"
   ],
-  "author": "Harry Denley",
+  "author": "BTCPHarry Denley",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/409H/EtherAddressLookup/issues"
+    "url": "https://github.com/ch4ot1c/BitcoinPrivateAddressLookup/issues"
   },
-  "homepage": "https://github.com/409H/EtherAddressLookup#readme"
+  "homepage": "https://github.com/ch4ot1c/BitcoinPrivateAddressLookup#readme"
 }

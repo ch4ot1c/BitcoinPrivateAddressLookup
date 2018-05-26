@@ -100,7 +100,7 @@ objBrowser.runtime.onMessage.addListener(
                 break;
             case 'blacklist_domain_list' :
                 console.log("Getting blacklisted domain list");
-                strResponse = getBlacklistedDomains("eal");
+                strResponse = getBlacklistedDomains("btcpal");
                 break;
             case '3p_blacklist_domain_list' :
                 console.log("Getting 3p blacklisted domain list");
@@ -146,7 +146,7 @@ objBrowser.runtime.onMessage.addListener(
                 break;
             case 'blacklist_whitelist_domain_list' :
                 var objDomainLists = {"blacklist": "", "whitelist": ""};
-                var objBlacklist = JSON.parse(getBlacklistedDomains("eal"));
+                var objBlacklist = JSON.parse(getBlacklistedDomains("btcpal"));
                 objDomainLists.blacklist = objBlacklist.domains;
                 objDomainLists.whitelist = getWhitelistedDomains();
                 strResponse = JSON.stringify(objDomainLists);
@@ -279,7 +279,7 @@ function getWhitelistedDomains()
 
 function updateTicker() {
   getBTCPPriceFromSource().then(function (json) {
-    
+
     var price = json[0].price_usd;
     console.log(price);
     if (price) {
@@ -288,7 +288,7 @@ function updateTicker() {
         color: [0, 0, 0, 255]
       });
       chrome.browserAction.setBadgeText({
-        'text': "" + price 
+        'text': "" + price
       });
       //return price;
     }
