@@ -52,16 +52,16 @@ function getBookmarks()
             "url": "https://explorer.btcprivate.org"
         });
         arrBookmarks.push({
-            "icon": "images/bookmarks/github.svg",
-            "url": "https://github.com/BTCPrivate"
+            "icon": "images/bookmarks/twitter.png",
+            "url": "https://twitter.com/BitcoinPrivate"
         });
         arrBookmarks.push({
             "icon": "images/bookmarks/reddit.png",
             "url": "https://reddit.com/r/BitcoinPrivate"
         });
         arrBookmarks.push({
-            "icon": "images/btcp-128x128.png",
-            "url": "https://btcprivate.org"
+            "icon": "images/bookmarks/github.svg",
+            "url": "https://github.com/BTCPrivate"
         });
     } else {
         arrBookmarks = JSON.parse(strBookmarks);
