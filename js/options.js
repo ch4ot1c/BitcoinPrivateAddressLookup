@@ -62,7 +62,7 @@ let objBrowser = chrome ? chrome : browser;
     setInterval(function() {
         console.log("Re-caching Bitcoin Private price");
         updateTicker();
-    }, 5000);
+    }, 30000);
 
 })();
 
@@ -288,9 +288,8 @@ function updateTicker() {
         color: [0, 0, 0, 255]
       });
       chrome.browserAction.setBadgeText({
-        'text': "" + price
+        'text': "$" + String(price).split('.')[0]
       });
-      //return price;
     }
 
   });
